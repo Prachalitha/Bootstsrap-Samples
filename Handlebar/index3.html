@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<title>Handlebar</title>
+<script src="js/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+<div id="pageData"></div>
+
+
+<script id="commnetsData" type="text/x-handlebars-template">
+
+<h1>Hello there !</h1>
+<ol>
+{{#each comments}}
+<li>
+<span>Publish {{comment}}</span>
+{{/each}}
+</ol>
+
+Comment published on {{{publishDate}}}
+</script>
+
+<script>
+
+var commentInfo = document.getElementById("commnetsData").innerHTML;
+
+var template = Handlebars.compile(commentInfo);
+
+var commentsDetails = template ({
+	comments:[
+		{comment: "sample first comment"},
+		{comment: "sample second comment"},
+		{comment: "sample third comment"},
+		{comment: "sample fourth comment"},
+		{comment: "sample fifth comment"}
+	],
+	publishDate: "<i>20th December 2015</i>"
+});
+
+document.getElementById("pageData").innerHTML += commentsDetails;
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<title>Handlebar</title>
+<script src="js/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+<div id="dataContainer"></div>
+<script>
+
+var myInfo = "<p>Hello its me {{name}} , I live in {{country}}</p>";
+var template = Handlebars.compile(myInfo);
+var data = template({name: "Prachalitha Nuwan", country: "Australia"});
+
+document.getElementById("dataContainer").innerHTML+= data;
+
+</script>
+</body>
+</html>

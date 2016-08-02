@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<title>Handlebar</title>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script src="js/groceries.js"></script>
+</head>
+<body>
+<div id="pageData"></div>
+
+
+<script id="grocery-template" type="text/x-handlebars-template">
+
+	
+
+</script>
+
+<script>
+
+//var templateInfo = document.getElementById("grocery-template").innerHTML;
+
+//var template = Handlebars.compile(templateInfo);
+
+var template = Handlebars.templates['groceries'];
+
+var context = {groceries:
+		[
+		{item: "potato"},
+		{item: "Flour"},
+		{item: "Carret"},
+		{item: "Milk"},
+		{item: "Apple"}
+		]};
+		
+var templatedata = template(context);
+
+document.getElementById("pageData").innerHTML += templatedata;
+		
+</script>
+</body>
+</html>

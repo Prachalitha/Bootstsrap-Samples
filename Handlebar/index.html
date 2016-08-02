@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<title>Handlebar</title>
+<script src="js/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+<div id="musicData"></div>
+
+<script id="music-template" type="text/x-handlebars-template">
+<h1>Music Artist</h1> 
+<h2>I like {{artist}} and below songs very much.</h2>
+<ul>
+{{#each songs}}
+<li>{{song}}
+{{/each}}
+</script>
+
+<script>
+var musicInfo = document.getElementById("music-template").innerHTML;
+
+var template = Handlebars.compile(musicInfo);
+
+var musicDetails = template ({
+	artist: "Calvin harris",
+	songs: [
+		{song: "We found love ft Rihanna"},
+		{song: "Simmer"},
+		{song: "This is what you came for"},
+		{song: "how deep is your love"},
+		{song: "Blame"}
+	]
+});
+document.getElementById("musicData").innerHTML += musicDetails;
+</script>
+</body>
+</html>
